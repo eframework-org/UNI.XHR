@@ -100,7 +100,7 @@ const httpErrTest = XTest.Test("HTTP error", () => {
                 reject()
             }
         }
-        req.open("GET", "http://www.example.org/example.txt")
+        req.open("GET", "https://postman-echo.com/status/404")
         req.send()
     }).catch(err => console.error("HTTPErrTest error:" + err))
 })
@@ -194,20 +194,29 @@ const postJsonTest = XTest.Test("POST JSON object", () => {
 
 const postFormTest = XTest.Test("POST Form", () => {
     return new Promise<void>((resolve, reject) => {
-        const timer = setTimeout(reject, 3000)
+        const timer = setTimeout(() => reject("Request timed out"), 3000)
         const req = new XMLHttpRequest()
         req.onload = function (evt) {
             clearTimeout(timer)
-            if (typeof (this.response) === "object") {
-                if (this.response.form && this.response.form.hello === "world" && this.response.form.foo === "bar") {
+            try {
+                if (this.status !== 200) {
+                    reject(`HTTP error! status: ${this.status}`)
+                    return
+                }
+                const response = typeof this.response === 'string' ? JSON.parse(this.response) : this.response
+                if (response && response.form && response.form.hello === "world" && response.form.foo === "bar") {
                     resolve()
                 } else {
-                    reject()
+                    reject(`Invalid response: ${JSON.stringify(response)}`)
                 }
-            } else {
-                reject()
+            } catch (err) {
+                reject(`Parse error: ${err}`)
             }
         }.bind(req)
+        req.onerror = () => {
+            clearTimeout(timer)
+            reject("Network error")
+        }
         req.open("POST", "https://postman-echo.com/post")
         req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
         req.send(`hello=world&foo=bar`)
