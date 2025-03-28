@@ -38,7 +38,7 @@ export default [
             name: "udts",
             buildEnd() {
                 cleanup("dist/unity/src")
-                cleanup("dist/unity/test")
+                cleanup("dist/unity/tests")
             }
         }],
     },
@@ -74,21 +74,21 @@ export default [
             name: "udts",
             buildEnd() {
                 cleanup("dist/unreal/src")
-                cleanup("dist/unreal/test")
+                cleanup("dist/unreal/tests")
             }
         },
 
         ],
     },
     {
-        input: "test/index.ts",
+        input: "tests/index.ts",
         output: [{
-            file: "dist/test/index.mjs",
+            file: "dist/tests/index.mjs",
             format: "es",
             sourcemap: process.argv.indexOf("--mode=production") === -1
         },
         {
-            file: "dist/test/index.cjs",
+            file: "dist/tests/index.cjs",
             format: "cjs",
             sourcemap: process.argv.indexOf("--mode=production") === -1
         }],
@@ -103,16 +103,16 @@ export default [
         ],
     },
     {
-        input: "dist/test/test/index.d.ts",
+        input: "dist/tests/tests/index.d.ts",
         output: {
-            file: "dist/test/index.d.ts",
+            file: "dist/tests/index.d.ts",
             format: "es",
         },
         plugins: [dts(), {
             name: "udts",
             buildEnd() {
-                cleanup("dist/test/src")
-                cleanup("dist/test/test")
+                cleanup("dist/tests/src")
+                cleanup("dist/tests/tests")
             }
         }
         ]

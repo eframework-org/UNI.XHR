@@ -45,10 +45,10 @@
       "import": "./dist/unreal/index.mjs",
       "types": "./dist/unreal/index.d.ts"
     },
-    "./test": {
-      "require": "./dist/test/index.cjs",
-      "import": "./dist/test/index.mjs",
-      "types": "./dist/test/index.d.ts"
+    "./tests": {
+      "require": "./dist/tests/index.cjs",
+      "import": "./dist/tests/index.mjs",
+      "types": "./dist/tests/index.d.ts"
     }
   },
   "devDependencies": {
