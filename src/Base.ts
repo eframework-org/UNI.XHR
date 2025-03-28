@@ -6,7 +6,7 @@ import { XEvent, XObject } from "org.eframework.uni.util"
 import parse from "url-parse"
 
 /**
- * URL接口。
+ * URL 接口。
  */
 export interface IURL {
     url: string;
@@ -17,10 +17,10 @@ export interface IURL {
 }
 
 /**
- * 解析URL。
+ * 解析 URL。
  * 
- * @param url 要解析的URL。
- * @returns 解析后的URL对象。
+ * @param url 要解析的 URL。
+ * @returns 解析后的 URL 对象。
  */
 export function parseUrl(url: string): IURL {
     const ret = parse(url);
@@ -29,22 +29,22 @@ export function parseUrl(url: string): IURL {
 }
 
 /**
- * XMLHttpRequest响应类型。
+ * XMLHttpRequest 响应类型。
  */
 export type XMLHttpRequestResponseType = "" | "arraybuffer" | "blob" | "document" | "json" | "text";
 
 /**
- * XMLHttpRequest方法。
+ * XMLHttpRequest 方法。
  */
 export type XMLHttpRequestMethod = "CONNECT" | "DELETE" | "GET" | "HEAD" | "OPTIONS" | "PATCH" | "POST" | "PUT" | "TRACE";
 
 /**
- * BodyInit类型。
+ * BodyInit 类型。
  */
 export type BodyInit = string | Record<string, any>;
 
 /**
- * XMLHttpRequest就绪状态枚举。
+ * XMLHttpRequest 就绪状态枚举。
  */
 export enum XMLHttpRequestReadyState {
     UNSENT,

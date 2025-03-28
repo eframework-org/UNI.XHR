@@ -12,8 +12,8 @@ EFramework XMLHttpRequest for Unite 是一个基于 PuerTS 的 XMLHttpRequest �
 
 ### 核心功能
 
-- Unity XMLHttpRequest：基于 UnityWebRequest 实现的完整 XMLHttpRequest 接口
-- Unreal XMLHttpRequest：基于 Unreal HTTP 模块实现的 XMLHttpRequest 接口 
+- Unity XMLHttpRequest：基于 UnityWebRequest 的 XMLHttpRequest 标准实现
+- Unreal XMLHttpRequest：基于 Unreal HTTP 的 XMLHttpRequest 标准实现
 
 ### 平台支持
 

@@ -8,11 +8,11 @@ import { BodyInit, parseUrl, XMLHttpRequestBase, XMLHttpRequestMethod, XMLHttpRe
 import { IURL } from "./Base"
 
 /**
- * Unity环境下的XMLHttpRequest类。
+ * Unity 环境下的 XMLHttpRequest 标准实现。
  */
 export class XMLHttpRequest extends XMLHttpRequestBase {
     /**
-     * 请求的URL。
+     * 请求的 URL。
      */
     public get url(): Readonly<IURL> { return this.$url }
     protected $url: IURL
@@ -36,9 +36,9 @@ export class XMLHttpRequest extends XMLHttpRequestBase {
     }
 
     /**
-     * 获取响应的URL。
+     * 获取响应的 URL。
      * 
-     * @returns 响应的URL。
+     * @returns 响应的 URL。
      */
     get responseURL(): string {
         if (this.url) return this.url.url
@@ -46,9 +46,9 @@ export class XMLHttpRequest extends XMLHttpRequestBase {
     }
 
     /**
-     * 获取响应的XML。
+     * 获取响应的 XML。
      * 
-     * @returns 响应的XML。
+     * @returns 响应的 XML。
      */
     get responseXML(): string {
         return this.responseText
@@ -98,7 +98,7 @@ export class XMLHttpRequest extends XMLHttpRequestBase {
     }
 
     /**
-     * 初始化一个新的XMLHttpRequest类实例。
+     * 初始化一个新的 XMLHttpRequest 类实例。
      */
     constructor() {
         super()
