@@ -58,7 +58,7 @@
     "@types/jest": "27.5.2",
     "@types/node": "16.11.7",
     "@types/url-parse": "1.4.11",
-    "org.eframework.uni.util": "0.0.1",
+    "org.eframework.uni.util": "0.0.2",
     "jest": "27.2.0",
     "rollup": "2.79.1",
     "rollup-plugin-dts": "4.2.3",
