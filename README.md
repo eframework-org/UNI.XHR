@@ -1,7 +1,8 @@
 # EFramework XMLHttpRequest for Unite
 
 [![Version](https://img.shields.io/npm/v/org.eframework.uni.xhr)](https://www.npmjs.com/package/org.eframework.uni.xhr)
-[![Downloads](https://img.shields.io/npm/dm/org.eframework.uni.xhr)](https://www.npmjs.com/package/org.eframework.uni.xhr)  
+[![Downloads](https://img.shields.io/npm/dm/org.eframework.uni.xhr)](https://www.npmjs.com/package/org.eframework.uni.xhr)
+[![DeepWiki](https://img.shields.io/badge/DeepWiki-Explore-blue)](https://deepwiki.com/eframework-org/UNI.XHR)
 
 EFramework XMLHttpRequest for Unite 是一个基于 PuerTS 的 XMLHttpRequest 标准实现，可运行于 Unity、Unreal 等多个引擎环境中。
 
